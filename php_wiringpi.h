@@ -38,6 +38,11 @@ ZEND_NAMED_FUNCTION(_wrap_pinMode);
 ZEND_NAMED_FUNCTION(_wrap_digitalWrite);
 ZEND_NAMED_FUNCTION(_wrap_digitalWriteByte);
 ZEND_NAMED_FUNCTION(_wrap_pwmWrite);
+
+ZEND_NAMED_FUNCTION(_wrap_softPwmWrite);
+ZEND_NAMED_FUNCTION(_wrap_softPwmCreate);
+ZEND_NAMED_FUNCTION(_wrap_softPwmStop);
+
 ZEND_NAMED_FUNCTION(_wrap_digitalRead);
 ZEND_NAMED_FUNCTION(_wrap_shiftOut);
 ZEND_NAMED_FUNCTION(_wrap_shiftIn);

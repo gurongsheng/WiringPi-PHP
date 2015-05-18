@@ -1293,6 +1293,95 @@ fail:
   SWIG_FAIL();
 }
 
+ZEND_NAMED_FUNCTION(_wrap_softPwmWrite) {
+  int arg1 ;
+  int arg2 ;
+  zval **args[2];
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 2 || zend_get_parameters_array_ex(2, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
+  /*@SWIG@*/;
+
+  softPwmWrite(arg1,arg2);
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+ZEND_NAMED_FUNCTION(_wrap_softPwmCreate) {
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  zval **args[3];
+  int result;
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 3 || zend_get_parameters_array_ex(3, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
+  /*@SWIG@*/;
+  
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[2]);
+  arg3 = (int) Z_LVAL_PP(args[2]);
+  /*@SWIG@*/;
+
+  result = (int)softPwmCreate(arg1, arg2, arg3);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+ZEND_NAMED_FUNCTION(_wrap_softPwmStop) {
+  int arg1 ;
+  zval **args[1];
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 1 || zend_get_parameters_array_ex(1, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+  softPwmStop(arg1);
+
+  return;
+fail:
+  SWIG_FAIL();
+}
 
 ZEND_NAMED_FUNCTION(_wrap_digitalRead) {
   int arg1 ;
@@ -1694,6 +1783,11 @@ static zend_function_entry wiringpi_functions[] = {
  SWIG_ZEND_NAMED_FE(digitalwrite,_wrap_digitalWrite,NULL)
  SWIG_ZEND_NAMED_FE(digitalwritebyte,_wrap_digitalWriteByte,NULL)
  SWIG_ZEND_NAMED_FE(pwmwrite,_wrap_pwmWrite,NULL)
+
+ SWIG_ZEND_NAMED_FE(softpwmcreate,_wrap_softPwmCreate,NULL)
+ SWIG_ZEND_NAMED_FE(softpwmwrite,_wrap_softPwmWrite,NULL)
+ SWIG_ZEND_NAMED_FE(softpwmstop,_wrap_softPwmStop,NULL)
+
  SWIG_ZEND_NAMED_FE(digitalread,_wrap_digitalRead,NULL)
  SWIG_ZEND_NAMED_FE(shiftout,_wrap_shiftOut,NULL)
  SWIG_ZEND_NAMED_FE(shiftin,_wrap_shiftIn,NULL)
