@@ -1383,6 +1383,145 @@ fail:
   SWIG_FAIL();
 }
 
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPIGetFd) {
+  int arg1 ;
+  zval **args[1];
+  int result;
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 1 || zend_get_parameters_array_ex(1, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+  result = (int)wiringPiSPIGetFd(arg1);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPIDataRW) {
+  int arg1 ;
+  unsigned char *arg2 ;
+  int arg3 ;
+  zval **args[3];
+  int result;
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 3 || zend_get_parameters_array_ex(3, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+
+  if ((*args[1])->type==IS_NULL) {
+    arg2 = (unsigned char *) 0;
+  } else {
+    convert_to_string_ex(args[1]);
+    arg2 = (unsigned char *) Z_STRVAL_PP(args[1]);
+  }
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[2]);
+  arg3 = (int) Z_LVAL_PP(args[2]);
+  /*@SWIG@*/;
+
+  result = (int)wiringPiSPIDataRW(arg1, arg2, arg3);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPISetupMode) {
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  zval **args[3];
+  int result;
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 3 || zend_get_parameters_array_ex(3, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
+  /*@SWIG@*/;
+  
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[2]);
+  arg3 = (int) Z_LVAL_PP(args[2]);
+  /*@SWIG@*/;
+
+  result = (int)wiringPiSPISetupMode(arg1, arg2, arg3);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPISetup) {
+  int arg1 ;
+  int arg2 ;
+  zval **args[2];
+  int result;
+
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 2 || zend_get_parameters_array_ex(2, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+
+
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
+  /*@SWIG@*/;
+  
+  result = (int)wiringPiSPISetup(arg1, arg2);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+
+  return;
+fail:
+  SWIG_FAIL();
+}
+
 ZEND_NAMED_FUNCTION(_wrap_digitalRead) {
   int arg1 ;
   zval **args[1];
@@ -1787,6 +1926,11 @@ static zend_function_entry wiringpi_functions[] = {
  SWIG_ZEND_NAMED_FE(softpwmcreate,_wrap_softPwmCreate,NULL)
  SWIG_ZEND_NAMED_FE(softpwmwrite,_wrap_softPwmWrite,NULL)
  SWIG_ZEND_NAMED_FE(softpwmstop,_wrap_softPwmStop,NULL)
+
+ SWIG_ZEND_NAMED_FE(wiringpispigetfd,_wrap_wiringPiSPIGetFd,NULL)
+ SWIG_ZEND_NAMED_FE(wiringpispidatarw,_wrap_wiringPiSPIDataRW,NULL)
+ SWIG_ZEND_NAMED_FE(wiringpispisetupmode,_wrap_wiringPiSPISetupMode,NULL)
+ SWIG_ZEND_NAMED_FE(wiringpispisetup,_wrap_wiringPiSPISetup,NULL)
 
  SWIG_ZEND_NAMED_FE(digitalread,_wrap_digitalRead,NULL)
  SWIG_ZEND_NAMED_FE(shiftout,_wrap_shiftOut,NULL)

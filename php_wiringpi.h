@@ -43,6 +43,11 @@ ZEND_NAMED_FUNCTION(_wrap_softPwmWrite);
 ZEND_NAMED_FUNCTION(_wrap_softPwmCreate);
 ZEND_NAMED_FUNCTION(_wrap_softPwmStop);
 
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPIGetFd);
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPIDataRW);
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPISetupMode);
+ZEND_NAMED_FUNCTION(_wrap_wiringPiSPISetup);
+
 ZEND_NAMED_FUNCTION(_wrap_digitalRead);
 ZEND_NAMED_FUNCTION(_wrap_shiftOut);
 ZEND_NAMED_FUNCTION(_wrap_shiftIn);
